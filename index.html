@@ -149,9 +149,7 @@
                 </li>
             </ul>
             <div class="note">
-                <p>我是一个充满活力，喜欢探索新技术，能解决实际问题的前端工程师</p>
-                <p>在军校的那段日子，更让我学会了技术以外的一些东西。
-                    <p>
+                <p></p>
             </div>
         </div>
     </div>
@@ -159,6 +157,30 @@
 </body>
 <script>
 	window.onload=function(){
+
+	//打字效果
+	var type=function(text,element,timeout){
+		len=text.length;
+		var n=0;
+		writing=setInterval(function(){
+		n++;
+		if(n>len){clearInterval(writing);return}
+		var subText=text.substring(0,n);
+		element.innerHTML=subText.replace(/。/g,'</p><p>&nbsp;&nbsp;');
+		},200);
+		setTimeout(function(){
+		if(element.innerHTML.length!==text.length){
+			element.innerHTML=text.replace(/。/g,'</p><p>&nbsp;');
+			clearInterval(writing);
+		}
+		}, timeout);
+	}
+	var text='我是一个充满活力，喜欢探索新技术，能解决实际问题的前端工程师。在军校的那段日子，更让我学会了技术以外的一些东西';
+	var page=document.querySelector('.note p');
+	type(text,page,12000);
+
+	
+	//背景
 	var canvas=document.getElementById('bgcanvas');
 	var ctx=canvas.getContext('2d');
 	var height=document.body.scrollHeight;
@@ -272,7 +294,6 @@
 		ctx.clearRect(0,0,width,height);
 		ctx.fillStyle='black';
 		ctx.fillRect(0,0,width,height);
-		console.log(height);
 		starfield.forEach(function(star,key){
 			var coords=star.mapXYToCanvas(width,height);
 			ctx.fillStyle=star.color;
@@ -315,6 +336,7 @@
 		})(i)
 	}
 
+	
 }
 
 </script>
