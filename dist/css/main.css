@@ -54,7 +54,7 @@ a { text-decoration: none; }
 .project, .skill { color: #00796B; margin-left: 10px; font-size: 1.1rem; font-family: 'SimHei'; }
 
 .experience, .skill-list { border-left: 2px solid #00796B; margin-left: 1rem; padding-left: 1.5rem; }
-.experience li, .skill-list li { position: relative; }
+.experience li, .skill-list li { position: relative; margin-right:2rem;}
 .experience .circle, .skill-list .circle { width: 1rem; height: 1rem; border-radius: 1rem; background: #00796B; position: absolute; top: 0px; left: -2rem; }
 .experience h2, .skill-list h2 { font-size: 1rem; }
 .experience p, .skill-list p { font-size: 0.8rem; }
